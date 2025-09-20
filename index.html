@@ -43,8 +43,8 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: auto;
+      min-width: 800px;
+      margin: center;
       background: white;
       padding: 20px;
       border-radius: 12px;
@@ -95,8 +95,48 @@
     .latex {
       font-size: 18px;
       line-height: 1.6;
+      margin-bottom: 5px;
     }
-  </style>
+
+    .formulas-column {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      max-height: 800px;
+    }
+
+    .formulas-column h3 {
+      margin-top: 0;
+      border-bottom: 2px solid;
+      padding-bottom: 10px;
+    }
+
+    .formula-item {
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #eee;
+    }
+
+    .formula-item:last-child {
+      border-bottom: none;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 5px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+</style>
 
 </head>
 <body>
@@ -107,26 +147,125 @@
     Limitless Calculus
   </header>
 
-  <div class="container">
-    <h2>Derivative Calculator</h2>
-    <p>Enter a function to compute its derivative:</p>
-    <input type="text" id="inputExpr1" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
-    <!-- change function name here -->
-    <button onclick="differentiate()">Calculate Derivative</button>
-    <p><strong>Result:</strong></p>
-    <div class="output latex" id="output1"></div>
+  <div class="flex-container">
+    <!-- Left Formulas Column -->
+    <div class="formulas-column">
+      <h3>Derivative Formulas</h3>
+      <div class="formula-item">
+        <div><strong>Constant Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(c) = 0$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Power Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(x^n) = nx^{n-1}$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Exponential Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(e^x) = e^x$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Logarithm Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(\ln x) = \frac{1}{x}$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Sine Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(\sin x) = \cos x$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Cosine Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(\cos x) = -\sin x$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Tangent Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(\tan x) = \sec^2 x$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Product Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(uv) = u'v + uv'$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Quotient Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}\left(\frac{u}{v}\right) = \frac{u'v - uv'}{v^2}$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Chain Rule</strong></div>
+        <div class="latex">$\frac{d}{dx}(f(g(x))) = f'(g(x)) \cdot g'(x)$</div>
+      </div>
+    </div>
+
+    <div class="flex-column">
+      <!-- Middle Column-->
+      <div class="container">
+        <h2>Derivative Calculator</h2>
+        <p>Enter a function to compute its derivative:</p>
+        <input type="text" id="inputExpr1" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
+        <!-- change function name here -->
+        <button onclick="differentiate()">Calculate Derivative</button>
+        <p><strong>Result:</strong></p>
+        <div class="output latex" id="output1"></div>
+      </div>
+
+      <div class="container">
+        <h2>Integral Calculator</h2>
+        <p>Enter a function to compute its integral:</p>
+        <input type="text" id="inputExpr2" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
+        <!-- change function name here -->
+        <button onclick="integrateExpr()">Calculate Integral</button>
+        <p><strong>Result:</strong></p>
+        <div class="output latex" id="output2"></div>
+      </div>
+    </div>
+
+    <!-- Right Formulas Column -->
+    <div class="formulas-column">
+      <h3>Integral Formulas</h3>
+      <div class="formula-item">
+        <div><strong>Constant Rule</strong></div>
+        <div class="latex">$\int k \, dx = kx + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Power Rule (n ≠ -1)</strong></div>
+        <div class="latex">$\int x^n \, dx = \frac{x^{n+1}}{n+1} + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Reciprocal Rule</strong></div>
+        <div class="latex">$\int \frac{1}{x} \, dx = \ln|x| + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Exponential Rule</strong></div>
+        <div class="latex">$\int e^x \, dx = e^x + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Sine Rule</strong></div>
+        <div class="latex">$\int \sin x \, dx = -\cos x + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Cosine Rule</strong></div>
+        <div class="latex">$\int \cos x \, dx = \sin x + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Secant Squared Rule</strong></div>
+        <div class="latex">$\int \sec^2 x \, dx = \tan x + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Arctangent Rule</strong></div>
+        <div class="latex">$\int \frac{1}{1+x^2} \, dx = \arctan x + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Arcsine Rule</strong></div>
+        <div class="latex">$\int \frac{1}{\sqrt{1-x^2}} \, dx = \arcsin x + C$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Integration by Parts</strong></div>
+        <div class="latex">$\int u \, dv = uv - \int v \, du$</div>
+      </div>
+      <div class="formula-item">
+        <div><strong>Substitution Rule</strong></div>
+        <div class="latex">$\int f(g(x))g'(x) \, dx = \int f(u) \, du$</div>
+      </div>
+    </div>
   </div>
 
-  <div class="container">
-    <h2>Integral Calculator</h2>
-    <p>Enter a function to compute its integral:</p>
-    <input type="text" id="inputExpr2" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
-    <!-- change function name here -->
-    <button onclick="integrateExpr()">Calculate Integral</button>
-    <p><strong>Result:</strong></p>
-    <div class="output latex" id="output2"></div>
-  </div>
-  
   <!-- change file directory here -->
   <script src="helloworldtestscript.js"></script>      
 </body>
