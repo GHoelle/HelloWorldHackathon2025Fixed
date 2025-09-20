@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- change title name here -->
+  <title>Limitless Calculus</title>
+  <link rel="icon" href="lc_logo.png" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.js"></script>
+  
+  <script>
+    window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+        svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <style>
+    header {
+      background: linear-gradient(to right, #2088b8, #be1ea6);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      border-radius: 12px;
+      padding: 15px 10px;
+      font-size: 24px;
+      vertical-align: middle;
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 30px;
+    }
+
+    header img {
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    body {
+      background: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+      padding-top: 20px;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 98%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #2088b8;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1d7da9;
+    }
+
+    .output {
+      margin-top: 20px;
+      background: #eff1f3;
+      padding: 10px;
+      border-left: 4px solid #2088b8;
+      border-radius: 8px;
+    }
+
+    .latex {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <!-- change logo directory here -->
+    <img src="lc_logo.png" alt="Logo">
+    <!-- change title name here -->
+    Limitless Calculus
+  </header>
+
+  <div class="container">
+    <h2>Derivative Calculator</h2>
+    <p>Enter a function to compute its derivative:</p>
+    <input type="text" id="inputExpr1" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
+    <!-- change function name here -->
+    <button onclick="differentiate()">Calculate Derivative</button>
+    <div class="output latex" id="output1">Result:</div>
+  </div>
+
+  <div class="container">
+    <h2>Integral Calculator</h2>
+    <p>Enter a function to compute its integral:</p>
+    <input type="text" id="inputExpr2" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
+    <!-- change function name here -->
+    <button onclick="integrateExpr()">Calculate Integral</button>
+    <div class="output latex" id="output2">Answer:</div>
+  </div>
+  
+  <!-- change file directory here -->
+  <script src="helloworldtestscript.js"></script>      
+</body>
+</html>
