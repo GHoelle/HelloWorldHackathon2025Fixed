@@ -89,6 +89,7 @@
       padding: 10px;
       border-left: 4px solid #2088b8;
       border-radius: 8px;
+      min-height: 40px;
     }
 
     .latex {
@@ -112,7 +113,8 @@
     <input type="text" id="inputExpr1" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
     <!-- change function name here -->
     <button onclick="differentiate()">Calculate Derivative</button>
-    <div class="output latex" id="output1">Result:</div>
+    <p><strong>Result:</strong></p>
+    <div class="output latex" id="output1"></div>
   </div>
 
   <div class="container">
@@ -121,7 +123,8 @@
     <input type="text" id="inputExpr2" placeholder="e.g. x^2 * sin(x), (x^2 + 1)/(x+1), x*sin(x)" />
     <!-- change function name here -->
     <button onclick="integrateExpr()">Calculate Integral</button>
-    <div class="output latex" id="output2">Answer:</div>
+    <p><strong>Result:</strong></p>
+    <div class="output latex" id="output2"></div>
   </div>
   
   <!-- change file directory here -->
