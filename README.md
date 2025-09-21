@@ -1,6 +1,6 @@
- Step-by-Step Derivative & Integral Finder
+# Limitless Calculus: Step-by-Step Derivative & Integral Solver
 
-A lightweight web application that computes **derivatives** and **step-by-step integrals** for algebraic and simple function expressions. Supports polynomial, product, quotient, chain rule, and **integration by parts** for polynomial × simple function terms.
+A lightweight web application that computes **step-by-step derivatives** and **step-by-step integrals** for algebraic and simple function expressions. Supports polynomial, product, quotient, chain rule, and **integration by parts** for polynomial × simple function terms.
 
 ---
 
@@ -23,7 +23,7 @@ A lightweight web application that computes **derivatives** and **step-by-step i
 
 - **Clean UI**  
   - Simple, responsive interface.  
-  - Input field + buttons for derivative/integral.  
+  - Input field + buttons for derivative/integral computations.  
   - Step-by-step results displayed clearly.
 
 ---
